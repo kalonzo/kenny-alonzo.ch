@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Galleries index{% endblock %}
+
+{% block body %}
+    <h1>Galleries index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdGallery</th>
+                <th>Filename</th>
+                <th>Uniquefilename</th>
+                <th>Image</th>
+                <th>Duration</th>
+                <th>CreationDate</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for gallery in galleries %}
+            <tr>
+                <td>{{ gallery.idGallery }}</td>
+                <td>{{ gallery.filename }}</td>
+                <td>{{ gallery.uniquefilename }}</td>
+                <td>{{ gallery.image }}</td>
+                <td>{{ gallery.duration }}</td>
+                <td>{{ gallery.creationDate ? gallery.creationDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('galleries_show', {'idGallery': gallery.idGallery}) }}">show</a>
+                    <a href="{{ path('galleries_edit', {'idGallery': gallery.idGallery}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('galleries_new') }}">Create new</a>
+{% endblock %}
