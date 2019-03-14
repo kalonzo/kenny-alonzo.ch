@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {{ controller_name }}!{% endblock %}
+
+{% block stylesheets %} 
+ {{ parent() }}
+<link href="{{ asset('build/homepage.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+
+<main role="main">
+
+         <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="first-slide" src="{{asset('build/static/slider/slider-1.jpg')}}" alt="First slide">
+            <div class="container">
+              <div class="carousel-caption text-left">
+                <h1>Contacte.</h1>
+                <p>Leave me your message and your contact information and I will answer you personally. Do not hesitate to make a specific request or leave me your number.</p>
+                <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+              </div>
+            </div>
+          </div>
+      </div>
+
+   <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">About. <span class="text-muted">Who let's dog out !!.</span></h2>
+            <p class="lead">Website design in a broad sense, realization of your web project and professional advice, designing a website is not simply to create a static business card.Today the technological requirements and the wait for sober and efficient service. is an important part of your business.
+e-commerce to sell your articles or offer your services on the web (shop on line)
+Customized solution offering services out of web standards (dynamic website, corporate intranet)
+CMS website design on the go to promote an event or portfolio (static website with content management)</p>
+          </div>
+          <div class="col-md-5">
+            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" style="width: 500px; height: 500px;" src="{{asset('build/static/services/panel-1.png')}}" data-holder-rendered="true">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">Digital Marketing. <span class="text-muted">SEO.</span></h2>
+            <p class="lead"></p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" src="{{asset('build/static/services/panel-2.jpg')}}" data-holder-rendered="true" style="width: 500px; height: 500px;">
+          </div>
+        </div>
+
+
+</main>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('build/homepage.js') }}"></script>
+{% endblock %}
