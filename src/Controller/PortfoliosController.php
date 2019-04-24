@@ -8,6 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Utils\Tools;
 
 /**
  * @Route("/portfolios")
@@ -36,6 +37,19 @@ class PortfoliosController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            
+
+            // 4) save the User!
+            $date = new \DateTime('@'.strtotime('now'));//insert current timestamp
+            $portfolio->setCreationDate($date);//assign date to current gallery object
+            $portfolio->setIdPortfolio(Tools::genereteUUID());
+            $portfolio->setId($this->getUser());//assign date to current gallery object
+            // 5) save the User!
+            //var_dump($userId);
+            $emUser = $this->getDoctrine()->getManager();
+            $emUser->persist($portfolio);
+            $emUser->flush($portfolio);
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($portfolio);
             $em->flush();
@@ -45,7 +59,7 @@ class PortfoliosController extends AbstractController
 
         return $this->render('portfolios/new.html.twig', [
             'portfolio' => $portfolio,
-            'form' => $form->createView(),
+            'formPort' => $form->createView(),
         ]);
     }
 
@@ -73,7 +87,7 @@ class PortfoliosController extends AbstractController
 
         return $this->render('portfolios/edit.html.twig', [
             'portfolio' => $portfolio,
-            'form' => $form->createView(),
+            'formPort' => $form->createView(),
         ]);
     }
 

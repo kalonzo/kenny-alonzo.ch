@@ -20,6 +20,13 @@ security:
                 authenticators:
                     - App\Security\LoginFormAuthenticator
             # + point to route.yaml path app_logout 
+            logout:
+                path:   app_logout
+            # + point to route.yaml path app_logout 
+            # + point to service.yaml logout_success_handler
+                success_handler: logout_success_handler
+            # activate different ways to authenticate
+            # + point to route.yaml path app_logout 
             #logout:
             #    path:   app_logout
             # + point to route.yaml path app_logout 

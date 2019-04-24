@@ -15,7 +15,7 @@ class Widget
     /**
      * @var int
      *
-     * @ORM\Column(name="id_widget", type="binary", nullable=false)
+     * @ORM\Column(name="id_widget", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -160,6 +160,11 @@ class Widget
         $this->idCategory = $idCategory;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->getName();
     }
 
 

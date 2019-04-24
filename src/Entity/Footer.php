@@ -15,7 +15,7 @@ class Footer
     /**
      * @var int
      *
-     * @ORM\Column(name="id_footer", type="binary", nullable=false)
+     * @ORM\Column(name="id_footer", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -160,6 +160,11 @@ class Footer
         $this->idMenu = $idMenu;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->getName();
     }
 
 

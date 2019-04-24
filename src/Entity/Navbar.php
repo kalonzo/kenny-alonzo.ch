@@ -15,7 +15,7 @@ class Navbar
     /**
      * @var int
      *
-     * @ORM\Column(name="id_navbar", type="binary", nullable=false)
+     * @ORM\Column(name="id_navbar", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -163,4 +163,9 @@ class Navbar
     }
 
 
+    public function __toString()
+    {
+        return $this->getName();
+    }
+    
 }

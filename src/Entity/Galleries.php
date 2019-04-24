@@ -19,7 +19,7 @@ class Galleries
     /**
      * @var int
      *
-     * @ORM\Column(name="id_gallery", type="binary", nullable=false)
+     * @ORM\Column(name="id_gallery", type="uuid", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
      */
@@ -201,6 +201,11 @@ class Galleries
         }
 
         return $this;
+    }
+
+    public function __toString()
+    {
+    return $this->getUniquefilename();
     }
 
 }

@@ -8,6 +8,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Utils\Tools;
+use App\Entity\Portfolios;
 
 /**
  * @Route("/cv")
@@ -36,6 +38,24 @@ class CvController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $date = new \DateTime('@'.strtotime('now'));//insert current timestamp
+            $cv->setCreationDate($date);//assign date to current gallery object
+            $cv->setIdCv(Tools::genereteUUID());
+
+            //register path
+            $user = $this->getUser();
+            if(isset($user)){
+                // from inside a controller
+                $repository = $this->getDoctrine()->getRepository(Portfolios::class);
+
+                //$idPortfolio = $repository->find($id);
+                $idPortfolio = $repository->findOneBy(['id' => $this->getUser()->getId()]);
+
+                $cv->addIdPortfolio($idPortfolio);
+            }
+            
+
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($cv);
             $em->flush();
@@ -45,7 +65,7 @@ class CvController extends AbstractController
 
         return $this->render('cv/new.html.twig', [
             'cv' => $cv,
-            'form' => $form->createView(),
+            'formCv' => $form->createView(),
         ]);
     }
 
@@ -73,7 +93,7 @@ class CvController extends AbstractController
 
         return $this->render('cv/edit.html.twig', [
             'cv' => $cv,
-            'form' => $form->createView(),
+            'formCv' => $form->createView(),
         ]);
     }
 

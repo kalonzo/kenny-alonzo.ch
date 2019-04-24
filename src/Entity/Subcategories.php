@@ -17,7 +17,7 @@ class Subcategories
     /**
      * @var int
      *
-     * @ORM\Column(name="id_subcategory", type="binary", nullable=false)
+     * @ORM\Column(name="id_subcategory", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */

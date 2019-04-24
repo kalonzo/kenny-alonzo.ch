@@ -17,9 +17,8 @@ class Portfolios
     /**
      * @var int
      *
-     * @ORM\Column(name="id_portfolio", type="binary", nullable=false)
+     * @ORM\Column(name="id_portfolio", type="uuid", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idPortfolio;
 
@@ -222,7 +221,7 @@ class Portfolios
         $this->idWeb = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
-    public function getIdPortfolio(): ?int
+    public function getIdPortfolio()
     {
         return $this->idPortfolio;
     }
@@ -259,6 +258,13 @@ class Portfolios
     public function setDescn($descn): self
     {
         $this->descn = $descn;
+
+        return $this;
+    }
+
+    public function setidPortfolio($idPortfolio): self
+    {
+        $this->idPortfolio = $idPortfolio;
 
         return $this;
     }

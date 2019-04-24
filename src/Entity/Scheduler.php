@@ -17,7 +17,7 @@ class Scheduler
     /**
      * @var int
      *
-     * @ORM\Column(name="id_schedule", type="binary", nullable=false)
+     * @ORM\Column(name="id_schedule", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */

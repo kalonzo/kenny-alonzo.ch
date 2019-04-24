@@ -17,7 +17,7 @@ class Projects
     /**
      * @var int
      *
-     * @ORM\Column(name="id_project", type="binary", nullable=false)
+     * @ORM\Column(name="id_project", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -414,6 +414,11 @@ class Projects
         }
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->getName();
     }
 
 }

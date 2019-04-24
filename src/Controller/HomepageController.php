@@ -28,6 +28,16 @@ class HomepageController extends AbstractController
     }
 
     /**
+     * @Route("/website", name="website")
+     */
+    public function website()
+    {
+        return $this->render('homepage/website.html.twig', [
+            'controller_name' => 'HomepageController',
+        ]);
+    }
+
+    /**
      * @Route("/about", name="about")
      */
     public function about(\Swift_Mailer $mailer)

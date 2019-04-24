@@ -11,6 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use App\Entity\Galleries;
 
 class UserType extends AbstractType
 {
@@ -24,7 +25,7 @@ class UserType extends AbstractType
                 'first_options'  => array('label' => 'Password'),
                 'second_options' => array('label' => 'Repeat Password'),
             ))
-           // ->add('id', GalleriesType::class)
+            //->add('id', GalleriesType::class)
 
         ;
     }

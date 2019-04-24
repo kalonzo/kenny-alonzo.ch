@@ -17,9 +17,8 @@ class Cv
     /**
      * @var int
      *
-     * @ORM\Column(name="id_cv", type="binary", nullable=false)
+     * @ORM\Column(name="id_cv", type="uuid", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $idCv;
 
@@ -266,12 +265,12 @@ class Cv
         $this->idPortfolio = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
-    public function getIdCv(): ?int
+    public function getIdCv()
     {
         return $this->idCv;
     }
 
-    public function setIdCv($id): self
+    public function setIdCv($id)
     {
         $this->idCv = $id;
 
@@ -663,6 +662,11 @@ class Cv
         }
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->getName();
     }
 
 }

@@ -5,6 +5,10 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Utils\Tools;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use App\Entity\Labels;
 
 /**
  * Experiences
@@ -12,12 +16,12 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="experiences", indexes={@ORM\Index(name="id_order", columns={"id_order"}), @ORM\Index(name="id_label", columns={"id_label"}), @ORM\Index(name="id_business_name", columns={"id_business_name"})})
  * @ORM\Entity
  */
-class Experiences
+class Experiences extends Controller
 {
     /**
      * @var int
      *
-     * @ORM\Column(name="id_experience", type="binary", nullable=false)
+     * @ORM\Column(name="id_experience", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -289,4 +293,15 @@ class Experiences
         return $this;
     }
 
+
+        //Fonction (magique) qui permet d'overider la conversion de string
+        public function __toString()
+        {
+            // from inside a controller
+            $repository = $this->getDoctrine()->getRepository(User::class);
+
+            //$product = $repository->find($this->getIdLabel());
+            return $product;
+        }
+    
 }

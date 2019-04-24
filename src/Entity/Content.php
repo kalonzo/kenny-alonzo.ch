@@ -15,7 +15,7 @@ class Content
     /**
      * @var int
      *
-     * @ORM\Column(name="id_content", type="binary", nullable=false)
+     * @ORM\Column(name="id_content", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -162,5 +162,9 @@ class Content
         return $this;
     }
 
+    public function __toString()
+    {
+        return $this->getName();
+    }
 
 }

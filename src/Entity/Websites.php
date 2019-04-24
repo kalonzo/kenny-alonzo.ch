@@ -17,7 +17,7 @@ class Websites
     /**
      * @var int
      *
-     * @ORM\Column(name="id_web", type="binary", nullable=false)
+     * @ORM\Column(name="id_web", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -205,6 +205,11 @@ class Websites
         }
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->getName();
     }
 
 }

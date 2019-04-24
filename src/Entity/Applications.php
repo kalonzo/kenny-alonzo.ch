@@ -17,7 +17,7 @@ class Applications
     /**
      * @var int
      *
-     * @ORM\Column(name="id_app", type="binary", nullable=false)
+     * @ORM\Column(name="id_app", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -205,6 +205,10 @@ class Applications
         }
 
         return $this;
+    }
+    public function __toString()
+    {
+        return $this->getName();
     }
 
 }

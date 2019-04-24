@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Utils\Tools;
 
 /**
  * Hobbies
@@ -17,7 +18,7 @@ class Hobbies
     /**
      * @var int
      *
-     * @ORM\Column(name="id_hobbie", type="binary", nullable=false)
+     * @ORM\Column(name="id_hobbie", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */

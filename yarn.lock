@@ -47,9 +47,9 @@
   dependencies:
     "@babel/types" "^7.0.0"
 
-"@babel/helper-builder-binary-assignment-operator-visitor@^7.1.0":
+"@babel/helper-builder-uuid-assignment-operator-visitor@^7.1.0":
   version "7.1.0"
-  resolved "https://registry.yarnpkg.com/@babel/helper-builder-binary-assignment-operator-visitor/-/helper-builder-binary-assignment-operator-visitor-7.1.0.tgz#6b69628dfe4087798e0c4ed98e3d4a6b2fbd2f5f"
+  resolved "https://registry.yarnpkg.com/@babel/helper-builder-uuid-assignment-operator-visitor/-/helper-builder-uuid-assignment-operator-visitor-7.1.0.tgz#6b69628dfe4087798e0c4ed98e3d4a6b2fbd2f5f"
   integrity sha512-qNSR4jrmJ8M1VMM9tibvyRAHXQs2PmaksQF7c1CGJNipfe3D8p+wgNwgso/P2A2r2mdgBWAXljNWR0QRZAMW8w==
   dependencies:
     "@babel/helper-explode-assignable-expression" "^7.1.0"
@@ -375,7 +375,7 @@
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-exponentiation-operator/-/plugin-transform-exponentiation-operator-7.2.0.tgz#a63868289e5b4007f7054d46491af51435766008"
   integrity sha512-umh4hR6N7mu4Elq9GG8TOu9M0bakvlsREEC+ialrQN6ABS4oDQ69qJv1VtR3uxlKMCQMCvzk7vr17RHKcjx68A==
   dependencies:
-    "@babel/helper-builder-binary-assignment-operator-visitor" "^7.1.0"
+    "@babel/helper-builder-uuid-assignment-operator-visitor" "^7.1.0"
     "@babel/helper-plugin-utils" "^7.0.0"
 
 "@babel/plugin-transform-for-of@^7.2.0":
@@ -1144,9 +1144,9 @@ big.js@^5.2.2:
   resolved "https://registry.yarnpkg.com/big.js/-/big.js-5.2.2.tgz#65f0af382f578bcdc742bd9c281e9cb2d7768328"
   integrity sha512-vyL2OymJxmarO8gxMr0mhChsO9QGwhynfuu4+MHTAW6czfq9humCB7rKpUjDd9YUiDPU4mzpyupFSvOClAwbmQ==
 
-binary-extensions@^1.0.0:
+uuid-extensions@^1.0.0:
   version "1.13.0"
-  resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-1.13.0.tgz#9523e001306a32444b907423f1de2164222f6ab1"
+  resolved "https://registry.yarnpkg.com/uuid-extensions/-/uuid-extensions-1.13.0.tgz#9523e001306a32444b907423f1de2164222f6ab1"
   integrity sha512-EgmjVLMn22z7eGGv3kcnHwSnJXmFHjISTY9E/S5lIcTD3Oxw05QTcBLNkJFzcb3cNueUdF/IN4U+d78V0zO8Hw==
 
 block-stream@*:
@@ -1472,7 +1472,7 @@ chokidar@^2.0.0, chokidar@^2.0.2:
     braces "^2.3.2"
     glob-parent "^3.1.0"
     inherits "^2.0.3"
-    is-binary-path "^1.0.0"
+    is-uuid-path "^1.0.0"
     is-glob "^4.0.0"
     normalize-path "^3.0.0"
     path-is-absolute "^1.0.0"
@@ -3412,12 +3412,12 @@ is-arrayish@^0.3.1:
   resolved "https://registry.yarnpkg.com/is-arrayish/-/is-arrayish-0.3.2.tgz#4574a2ae56f7ab206896fb431eaeed066fdf8f03"
   integrity sha512-eVRqCvVlZbuw3GrM63ovNSNAeA1K16kaR/LRY/92w0zxQ5/1YzwblUX652i4Xs9RwAGjW9d9y6X88t8OaAJfWQ==
 
-is-binary-path@^1.0.0:
+is-uuid-path@^1.0.0:
   version "1.0.1"
-  resolved "https://registry.yarnpkg.com/is-binary-path/-/is-binary-path-1.0.1.tgz#75f16642b480f187a711c814161fd3a4a7655898"
+  resolved "https://registry.yarnpkg.com/is-uuid-path/-/is-uuid-path-1.0.1.tgz#75f16642b480f187a711c814161fd3a4a7655898"
   integrity sha1-dfFmQrSA8YenEcgUFh/TpKdlWJg=
   dependencies:
-    binary-extensions "^1.0.0"
+    uuid-extensions "^1.0.0"
 
 is-buffer@^1.1.5:
   version "1.1.6"

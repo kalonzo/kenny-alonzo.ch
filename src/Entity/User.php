@@ -18,7 +18,7 @@ class User implements UserInterface
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="uuid")
      */
     private $id;
 
@@ -218,4 +218,9 @@ class User implements UserInterface
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
     }   
+
+    public function __toString()
+    {
+        return $this->getUsername();
+    }
 }

@@ -17,7 +17,7 @@ class Training
     /**
      * @var int
      *
-     * @ORM\Column(name="id_training", type="binary", nullable=false)
+     * @ORM\Column(name="id_training", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */

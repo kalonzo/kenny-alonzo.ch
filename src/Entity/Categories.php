@@ -17,7 +17,7 @@ class Categories
     /**
      * @var int
      *
-     * @ORM\Column(name="id_category", type="binary", nullable=false)
+     * @ORM\Column(name="id_category", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */

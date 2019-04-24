@@ -4,6 +4,24 @@
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
+
+#formAjaxFeedback{
+    flex: 1;
+    padding-right: 10px;
+    a{
+        text-decoration: none;
+    }
+    #form-ajax-alert, #form-ajax-confirm, #form-ajax-loading{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: left;
+        display: none;
+        .glyphicon{
+            margin-right: 5px;
+        }
+    }
+}
+
 header
 {
     position: absolute;

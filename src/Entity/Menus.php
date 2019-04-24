@@ -17,7 +17,7 @@ class Menus
     /**
      * @var int
      *
-     * @ORM\Column(name="id_menu", type="binary", nullable=false)
+     * @ORM\Column(name="id_menu", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -291,6 +291,11 @@ class Menus
         }
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->getName();
     }
 
 }
