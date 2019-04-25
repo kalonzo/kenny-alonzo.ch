@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Applications index{% endblock %}
+
+{% block body %}
+    <h1>Applications index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdApp</th>
+                <th>Name</th>
+                <th>Slug</th>
+                <th>Descn</th>
+                <th>CreationDate</th>
+                <th>PublishedAt</th>
+                <th>Active</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for application in applications %}
+            <tr>
+                <td>{{ application.idApp }}</td>
+                <td>{{ application.name }}</td>
+                <td>{{ application.slug }}</td>
+                <td>{{ application.descn }}</td>
+                <td>{{ application.creationDate ? application.creationDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ application.publishedAt ? application.publishedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ application.active ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('applications_show', {'idApp': application.idApp}) }}">show</a>
+                    <a href="{{ path('applications_edit', {'idApp': application.idApp}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('applications_new') }}">Create new</a>
+{% endblock %}
