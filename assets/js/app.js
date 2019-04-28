@@ -5,6 +5,10 @@
  * (and its CSS file) in your base layout (base.html.twig).
  */
 import 'datatables.net-dt/css/jquery.datatables.css'; // Importation des css pour le plugin DataTable
+import 'jquery';
+import 'moment/moment.js';
+
+
 
 // require jQuery normally
 const $ = require('jquery');
@@ -13,6 +17,7 @@ const $ = require('jquery');
 global.$ = global.jQuery = $;
 
 require('bootstrap');
+require ('moment/moment.js');
 require('@fortawesome/fontawesome-free/js/all.js');
 require( 'datatables.net-dt');//inclusion du plugin  Jquery DataTable
 

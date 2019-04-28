@@ -6,6 +6,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "mcfedr/uuid-paramconverter": "^2.3",
+        "moment/moment": "^2.24",
         "ramsey/uuid": "^3.8",
         "ramsey/uuid-doctrine": "^1.5",
         "symfony/apache-pack": "^1.0",

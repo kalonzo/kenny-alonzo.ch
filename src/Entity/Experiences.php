@@ -32,14 +32,14 @@ class Experiences extends Controller
      *
      * @ORM\Column(name="start_date", type="datetime", nullable=false, options={"default"="CURRENT_TIMESTAMP"})
      */
-    private $startDate = 'CURRENT_TIMESTAMP';
+    private $startDate ;
 
     /**
      * @var \DateTime
      *
      * @ORM\Column(name="end_date", type="datetime", nullable=false, options={"default"="CURRENT_TIMESTAMP"})
      */
-    private $endDate = 'CURRENT_TIMESTAMP';
+    private $endDate;
 
     /**
      * @var string|null

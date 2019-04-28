@@ -5,6 +5,12 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~@fortawesome/fontawesome-free/scss/fontawesome";
 
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/utilities";
+@import "~tempusdominus-bootstrap-4/src/sass/tempusdominus-bootstrap-4";
+
 #formAjaxFeedback{
     flex: 1;
     padding-right: 10px;
@@ -49,7 +55,7 @@ header
  }
 
 .main {
-   /* background-color: aquamarine; */
+    background-color: rgb(216, 212, 212); 
 }
 
 footer
