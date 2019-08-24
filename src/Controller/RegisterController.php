@@ -43,8 +43,7 @@ class RegisterController extends AbstractController
     /**
      * @Route("/", name="register_index", methods="GET")
      */
-    public function index(): Response
-    {
+    public function index(): Response{
         $portfolios = $this->getDoctrine()
             ->getRepository(Portfolios::class)
             ->findAll();
@@ -52,8 +51,7 @@ class RegisterController extends AbstractController
         return $this->render('register/index.html.twig', ['portfolios' => $portfolios]);
     }
 
-    public function userPostAction(Request $request, UserPasswordEncoderInterface $passwordEncoder)
-    {
+    public function userPostAction(Request $request, UserPasswordEncoderInterface $passwordEncoder){
         // 1) build the form for all form you want handle 
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
@@ -80,8 +78,7 @@ class RegisterController extends AbstractController
       return $form;
     }
 
-    public function galleriyPostAction(Request $request)
-    {
+    public function galleriyPostAction(Request $request){
         //entity for strucure of site need to be defaulted for commodity 
         //Portfolios dependence 
         $pictureType = $this->getDoctrine()->getRepository(Types::class)->find(Types::USER_PICTURE);
@@ -116,8 +113,7 @@ class RegisterController extends AbstractController
             return $formGal;
     }
 
-    public function cvPostAction(Request $request)
-    {
+    public function cvPostAction(Request $request){
         
         $cv = new Cv();
         $cvId = Tools::genereteUUID();
@@ -180,6 +176,7 @@ class RegisterController extends AbstractController
         $formState = 0; // state form for controle for send to user 
         $forms = array();
         $response = new Response();
+
         $form = self::userPostAction( $request,  $passwordEncoder);
         $formGal = self::galleriyPostAction( $request);
         $formCv = self::cvPostAction( $request);
@@ -193,7 +190,7 @@ class RegisterController extends AbstractController
 
         return $this->render(
             'register/new.html.twig',
-            array(  'form' => $form->createView()
+            array(   'form' => $form->createView()
                     ,'formGal' => $formGal->createView()
                     ,'formPort' => $formPort->createView()
                     ,'formCv' => $formCv->createView()
