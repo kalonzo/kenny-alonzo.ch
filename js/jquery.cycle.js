@@ -1053,7 +1053,7 @@ $.fn.cycle.defaults = {
     skipInitializationCallbacks: false, // set to true to disable the first before/after callback that occurs prior to any transition
     slideExpr:        null,     // expression for selecting slides (if something other than all children is required)
     slideResize:      1,        // force slide width/height to fixed size before every transition
-    speed:            9000,     // speed of the transition (any valid fx speed value)
+    speed:            4000,     // speed of the transition (any valid fx speed value)
     speedIn:          null,     // speed of the 'in' transition
     speedOut:         null,     // speed of the 'out' transition
     startingSlide:    undefined,// zero-based index of the first slide to be displayed
