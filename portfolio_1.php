@@ -83,7 +83,7 @@
 	<img class="portfolio_image" src="images/portfolio/pic_2.png" alt="">
 	<div class="portfolio_info">
 		<div class="portfolio_center">
-			<a class="pp pp_video" href="http://www.youtube.com/embed/617ANIA5Rqs?rel=0&amp;wmode=transparent" title="The Knife: We Share Our Mother's Health"></a>
+			<a class="pp pp_video" href="https://www.youtube.com/embed/617ANIA5Rqs?rel=0&amp;wmode=transparent" title="The Knife: We Share Our Mother's Health"></a>
 			<a class="link" href="" title=""></a>
 			<div class="clear"></div>
 			<div class="mb_portfolio"></div>
@@ -99,7 +99,7 @@
 	<img class="portfolio_image" src="images/portfolio/pic_3.png"  alt="">
 	<div class="portfolio_info">
 		<div class="portfolio_center">
-			<a class="pp pp_video" href="http://player.vimeo.com/video/2285902" title="R&ouml;yksopp: Remind Me"></a>
+			<a class="pp pp_video" href="https://player.vimeo.com/video/2285902" title="R&ouml;yksopp: Remind Me"></a>
 			<a class="link" href="" title=""></a>
 			<div class="clear"></div>
 			<div class="mb_portfolio"></div>

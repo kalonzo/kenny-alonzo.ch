@@ -5,11 +5,11 @@ function twitter_text(text) {
 	});
 	// Usernames
 	text = text.replace(/@[A-Za-z0-9_]+/g, function (u) {
-		return '<a href="http://twitter.com/#!/' + u.replace(/^@/, '') + '" target="_blank">' + u + '</a>';
+		return '<a href="https://twitter.com/#!/' + u.replace(/^@/, '') + '" target="_blank">' + u + '</a>';
 	});
 	// Hashtags
 	text = text.replace(/#[A-Za-z0-9_\-]+/g, function (u) {
-		return '<a href="http://twitter.com/#!/search?q=' + u.replace(/^#/, '%23') + '" target="_blank">' + u + '</a>';
+		return '<a href="https://twitter.com/#!/search?q=' + u.replace(/^#/, '%23') + '" target="_blank">' + u + '</a>';
 	});
 	
 	return text;
@@ -68,9 +68,9 @@ function twitterCallback2(twitters) {
     var status = twitters[i].text.replace(/((https?|s?ftp|ssh)\:\/\/[^"\s\<\>]*[^.,;'">\:\s\<\>\)\]\!])/g, function(url) {
       return '<a href="'+url+'">'+url+'</a>';
     }).replace(/\B@([_a-z0-9]+)/ig, function(reply) {
-      return  reply.charAt(0)+'<a href="http://twitter.com/'+reply.substring(1)+'">'+reply.substring(1)+'</a>';
+      return  reply.charAt(0)+'<a href="https://twitter.com/'+reply.substring(1)+'">'+reply.substring(1)+'</a>';
     });
-    statusHTML.push('<li><span>'+status+'</span> <a href="http://twitter.com/'+username+'/statuses/'+twitters[i].id_str+'">'+relative_time(twitters[i].created_at)+'</a></li>');
+    statusHTML.push('<li><span>'+status+'</span> <a href="https://twitter.com/'+username+'/statuses/'+twitters[i].id_str+'">'+relative_time(twitters[i].created_at)+'</a></li>');
   }
   document.getElementById('twitter_update_list').innerHTML = statusHTML.join('');
 }
@@ -138,10 +138,10 @@ $(document).ready(function(){
 	});
 	$('.ul_questions_2>li:first-child .border-center-contain-2').trigger('click');
 	
-	/* Twitter */
+	/* Twitter 
 	
-	/* TWEET 1 */
-	$.getJSON('http://api.twitter.com/1/statuses/user_timeline.json?screen_name=wpamanuke&count=5&include_rts=1&callback=?',{})
+	/* TWEET 1 
+	$.getJSON('https://api.twitter.com/1/statuses/user_timeline.json?screen_name=NoStarSunshine1&count=5&include_rts=1&callback=?',{})
 	.done(function( json ) {
 		$.each(json,function(){
 			text = this.text;
@@ -164,7 +164,7 @@ $(document).ready(function(){
 	.always(function() { console.log( "complete" ); });
 	
 
-	/*
+	
 	$("#twitter_update_list").tweet({
 		join_text: "auto",
 		username: "wpamanuke",
@@ -256,6 +256,7 @@ $(document).ready(function(){
 		return false;
 	});
 	/* PORTFOLIO ENDS */
+
 	
 	/* SCROLLBAR */
 	//alert(hasVerticalScroll());
