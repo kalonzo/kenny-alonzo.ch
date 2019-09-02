@@ -979,15 +979,15 @@ div.centerbox-inner{
 	line-height:1.4;
 }
 
-/*
+
 #twitter_update_list_container {
-	
-	margin-left:20px;
+	margin-bottom: 10px;	
+	/*margin-left:20px;
 	margin-top:20px;
-	margin-bottom:20px;
+	margin-bottom:20px;*/
 	
 }
-*/
+
 
 #twitter_update_list li{
 	padding:10px;

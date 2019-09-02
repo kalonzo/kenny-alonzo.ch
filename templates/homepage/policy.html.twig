@@ -1,0 +1,254 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {{ controller_name }}!{% endblock %}
+
+{% block stylesheets %} 
+ {{ parent() }}
+<link href="{{ asset('build/homepage.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+
+<main role="main">
+
+     <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="first-slide" src="{{asset('build/static/slider/slider-1.jpg')}}" alt="First slide">
+            <div class="container">
+              <div class="carousel-caption text-left">
+                <h1>Contacte.</h1>
+                <p>Leave me your message and your contact information and I will answer you personally. Do not hesitate to make a specific request or leave me your number.</p>
+                <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <hr class="featurette-divider">
+      <div class="container">
+          <div class="row "><div class="col-sm-12 col-md-12 col-lg-12"><div class="box-content default-set ">
+<h1>Politique de confidentialité</h1>
+<div class="content_wrap ">
+<p><i>Date d’entrée en vigueur le 25 septembre 2019</i></p>
+<p>La protection des données est particulièrement prioritaire pour la gestion de kenny-alonzo.ch. Lorsque le traitement de vos données personnelles est nécessaire et s’il n’y a pas de base pour un tel traitement, nous obtiendrons votre consentement.</p>
+<p>Le traitement des données personnelles, y compris votre nom, adresse, adresse électronique ou numéro de téléphone, sera toujours conforme au Règlement Général sur la Protection des Données (GDPR) et aux Réglementations de protection des données (spécifiques au pays) applicables à kenny-alonzo.ch.</p>
+<p>Via cette déclaration de protection des données, nous informons le grand public de la nature, de la portée et du but des données personnelles que nous collectons, utilisons et traitons. De plus, vous êtes informé, par cette déclaration de protection des données, des droits auxquels vous avez droit.</p>
+<p>En tant que contrôleur de données et processeur de données, kenny-alonzo.ch a mis en place de nombreuses mesures techniques et organisationnelles pour assurer une protection complète de vos données personnelles via le site Web. Étant donné que les transmissions de données sur Internet peuvent présenter des failles de sécurité, la protection absolue n’est pas garantie. C’est pourquoi, chaque personne concernée est libre de nous transférer des données personnelles par tous les moyens disponibles, par ex. par email ou par téléphone.</p>
+<h5>Dans cette Politique, nous allons expliquer :</h5>
+<div class="list styled check-list">
+<ol>
+<li><a href="#1">Quels types d’informations sont collectés par kenny-alonzo ?</a></li>
+<li><a href="#2">Comment collectons-nous des informations personnelles ?</a></li>
+<li><a href="#3">Quelles informations personnelles recueillons-nous à votre sujet auprès des autres ?</a></li>
+<li><a href="#4">Comment kenny-alonzo utilise-t-il les informations personnelles ?</a></li>
+<li><a href="#5">Quand divulguons-nous vos informations personnelles ?</a></li>
+<li><a href="#6">Où transférons-nous et / où stockons-nous vos informations personnelles ?</a></li>
+<li><a href="#7">Combien de temps gardons-nous vos informations personnelles ?</a></li>
+<li><a href="#8">Comment vos informations personnelles sont-elles conservées ?</a></li>
+<li><a href="#9">Comment pouvez-vous accéder et gérer vos informations personnelles ?</a></li>
+<li><a href="#10">Choix de marketing concernant vos informations personnelles.</a></li>
+<li><a href="#11">Information publique et sites Web tiers.</a></li>
+<li><a href="#12">Effacement systématique et blocage des données personnelles.</a></li>
+<li><a href="#13">Confidentialité des enfants.</a></li>
+<li><a href="#14">Changements dans notre Politique de confidentialité.</a></li>
+<li><a href="#15">Informations de contact.</a></li>
+<li><a href="#16">Informations légal.</a></li>
+</ol>
+</div>
+<h5><a name="1"></a> Quels types d’informations sont collectés par kenny-alonzo ?</h5>
+<p>Nous recueillons certaines informations sur les visiteurs et les utilisateurs de nos sites Web.<br>
+</p><div class="list styled check-list">
+<ul>
+<li><strong>Informations que nous obtenons des fournisseurs</strong></li>
+</ul>
+<p>Nom, nom de la société, adresse, adresse e-mail, numéro (s) de téléphone, détails de paiement (comme les informations de votre carte de crédit), réponses aux enquêtes lancées à des fins de recherche et demandes de support.</p>
+<p>Cette information est utilisée pour vous fournir et / ou améliorer nos services ; par exemple, payer des commissions, vérifier votre identité, vous contacter, vous fournir de la publicité et du marketing, et vous facturer. Nous utilisons cette information pour nous assurer que nous respectons les exigences légales.</p>
+<!-- <ul>
+<li><strong>Informations que nous obtenons des acheteurs</strong></li>
+</ul>
+<p>Noms, noms de membres, adresse e-mail, numéro de téléphone, autres coordonnées, informations sur votre ordinateur et sur vos visites et de l’utilisation de ce site (y compris les informations sur votre navigateur, l’adresse IP, l’emplacement général par votre navigateur), réponses aux enquêtes initié à des fins de recherche, les détails de paiement (comme les informations de votre carte de crédit), les détails de la transaction, les demandes de support, les données d’analyse Web, les informations que vous fournissez lorsque vous remplissez des formulaires sur nos sites.</p>
+<p>Nous pouvons utiliser ces informations pour répondre à vos demandes ou correspondance, pour fournir le service client (ou à des fins statistiques), faire l’analyse à des fins de gestion afin d’administrer le site, améliorer les produits / services, envoyer des avis techniques / mises à jour, alertes de sécurité, modifications dans les notifications de politiques, les messages administratifs, de sorte que nous pourrions prévenir la fraude, la violation des politiques / termes, et des menaces ou des dommages.</p>
+--><ul>
+<li><strong>Informations que nous obtenons de nos partenaires</strong></li>
+</ul>
+<p>Nom, nom de la société, URL du site, numéro de téléphone, adresse, type d’entreprise, adresse e-mail et informations provenant des processeurs marchands tels que l’adresse e-mail ou ID PayPal. Nous utilisons ces informations pour vous contacter, vous payer et filtrer les risques, les fraudes ou d’autres types de problèmes similaires, vous envoyer des avis techniques, des mises à jour, des alertes de sécurité, des informations sur les modifications apportées à nos règles et des messages d’assistance et d’administration.</p>
+<ul>
+<li><strong> Informations que nous obtenons des visiteurs du site</strong></li>
+</ul>
+<p>Le type d’appareil et le navigateur que vous utilisez, la connexion réseau, l’adresse IP, les informations sur les cookies installés sur votre appareil, les requêtes d’assistance et les données d’analyse Web. En outre, nous pouvons collecter des informations personnelles que vous nous soumettez via n’importe quelle fonctionnalité disponible sur l’un de nos sites Web.</p>
+<ul>
+<li><strong> Informations que nous obtenons des utilisateurs qui ont fait référence au support par chat</strong></li>
+</ul>
+<p>Nom, adresse e-mail, informations sur l’appareil et le navigateur que vous utilisez, la transcription du chat et d’autres informations personnelles que vous nous fournissez pendant notre discussion. Conformément à nos Conditions d’utilisation, nous pouvons vous demander des documents supplémentaires pendant notre conversation pour vérifier votre identité.</p></div>
+<h5><a name="2"></a> Comment collectons-nous les informations personnelles ?</h5>
+<div class="list styled check-list">
+<ol start="1">
+<li>Lorsque vous effectuez certaines actions comme inscription sur nos sites Web, achat / commande des articles ou des services sur nos sites, abonnement à notre newsletter, soumission des commentaires, participation aux concours, remplissage du sondage ou envoie d’une communication via n’importe quelle option disponible.</li>
+<li>Nous collectons automatiquement des informations personnelles lorsque vous naviguez sur les sites ou via la partie tierce lorsque vous utilisez les services associés à nos sites.</li>
+<li>Vous pouvez être invité à fournir des informations de connexion à votre site Web ou votre compte d’hébergement (serveur) dans le cas où vous avez commandé des services supplémentaires de nos partenaires comme l’installation de modèles, l’implémentation de logos, l’installation de plugins WordPress, etc. Dans ce cas, vous pouvez ou non fournir des informations de connexion à votre site Web ou votre compte d’hébergement, sachez que si vous refusez de fournir des informations de connexion à nos partenaires, ils ne pourront pas effectuer le service que vous avez commandé.</li>
+</ol>
+</div>
+<h5><a name="3"></a> Quelles informations personnelles recueillons-nous à votre sujet auprès des autres ?</h5>
+<p>Même si nous collectons des informations personnelles directement auprès de vous, nous pouvons parfois recueillir certaines informations vous concernant auprès d’autres sources.<br>
+</p><div class="list styled check-list">
+<ol start="1">
+<li>Détails sur votre parcours profesionnel.</li>
+<li>Des services tiers tels que Google, Facebook, Twitter peuvent nous fournir certaines informations vous concernant lorsque vous vous liez / connectez / inscrivez à un fournisseur tiers. La quantité d’informations peut varier et peut être / est contrôlée par ce fournisseur de services ou par vous via les contrôles de paramètres de confidentialité disponibles dans les paramètres de compte de ce fournisseur de services.</li>
+<li>Des parties tierces, nous pouvons obtenir des données démographiques, des informations de détection de fraude, combiner avec les informations que nous avons sur vous, pour confirmer votre identité, ceux-ci peuvent être des services de vérification d’identité utilisés pour prévenir les fraudes.</li>
+</ol>
+</div>
+<h5><a name="4"></a> Comment kenny-alonzo utilise-t-il les informations personnelles ?</h5>
+<div class="list styled check-list">
+<ol start="1">
+<li>Vos informations sont utilisées lorsque nous avons besoin de définir votre identité pour faciliter le traitement de vos informations effectuées sur l’un de nos sites Web, par exemple lorsque vous créer votre propre portfolio.</li>
+<li>D’autres intérêts légitimes peuvent inclure :
+<ol>
+<li>fourniture des services décrits sur l’un de nos sites Web ;</li>
+<li>vérifiсation de votre identité lorsque vous vous connectez à l’un de nos sites Web ;</li>
+<li>fourniture des services de soutien;</li>
+<li>Vérification de vos actions sur nos sites Web pour identifier les activités potentiellement frauduleuses et assurer le respect des conditions d’utilisation qui s’appliquent aux sites Web ;</li>
+<li>réponse à vos commentaires ou questions sur nos sites Web, demande de vos commentaires ou vos opinions via des sondages ;</li>
+</ol>
+</li>
+<li>Lorsque vous nous donnez votre consentement :
+<ol>
+<li>pour vous fournir des informations marketing sur les produits et services susceptibles de vous intéresser ;</li>
+</ol>
+</li>
+<li>À des fins multiples requises par la loi.</li>
+<li>Pour l’octroi d’une cour de justice, les autorités d’application de la loi, les demandes du gouvernement ou toute autre occasion qui peut se rapporter aux enquêtes.</li>
+</ol>
+</div>
+<h5><a name="5"></a> Quand divulguons-nous vos informations personnelles ?</h5>
+<p>Vos informations personnelles peuvent être consultées par :<br>
+</p><div class="list styled check-list">
+<ol start="1">
+<li>Personne ne peut consulter votre profil tant que celui-ci n'est pas publique ;</li>
+</ol>
+<p>Nous pouvons partager vos renseignements personnels avec des tiers dans les cas suivants, lorsque :</p>
+<ol start="1">
+<li>le client concerné a consenti à la divulgation.</li>
+<li>Dans le cas ou votre profil est partager avec les autres candidats et / ou les recruteurs.</li>
+</ol>
+</div>
+<h5><a name="6"></a> Où transférons-nous et / où stockons-nous vos informations personnelles ?</h5>
+<p>kenny-alonzo.ch a ses principales installations de fabrication hébérgeé chez <a href="https://www.kreativmedia.ch/fr/home">https://www.kreativmedia.ch/fr/home</a> et son stocké dans une base de données crypté. </p>
+<p>En outre, nous pouvons fournir certains détails personnels aux fournisseurs du marché kenny-alonzo.ch afin qu’ils puissent offrir un support produit à leurs clients.</p>
+<h5><a name="7"></a>Combien de temps gardons-nous vos informations personnelles ?</h5>
+<p>Vos informations privées sont conservées sur nos serveurs aussi longtemps que nécessaire pour vous fournir nos services et pour nous conformer aux obligations légales.</p>
+<p>Si vous ne souhaitez pas que nous stockons vos informations personnelles, vous avez le droit de les effacer, mais dans ce cas, les principale fonctionalité du site ne serons pas activé et vous ne pourrez plus consulter les profils.</p>
+<h5><a name="8"></a>Comment vos informations personnelles sont-elles conservées ?</h5>
+<p>Afin de sécuriser vos informations, nous appliquons certaines mesures organisationnelles pour les protéger contre une utilisation non autorisée ou illégale et une perte ou destruction accidentelle.<br>
+</p><div class="list styled check-list">
+<ol start="1">
+<li>Nous partageons et fournissons l’accès à vos informations dans la mesure du possible, sous réserve de restrictions de confidentialité réglé directement depuis la création de votre portfolio.</li>
+<li>Pour stocker vos informations, nous utilisons des serveurs sécurisés et des identifiant universel UUID.</li>
+<!--<li>Nous vérifions l’identité de tous les individus qui demandent l’accès à des informations privées avant de leur accorder l’accès.</li> -->
+<li>Nous utilisons le cryptage de certificat SSL pour protéger le transfert de données.</li>
+</ol>
+</div>
+<p>Assurez-vous que vos informations sont sécurisées. Nous ne sommes pas responsables si vous essayez de contourner les paramètres de confidentialité sur nos sites Web. Dans le cas où nous vous donnons le mot de passe à certaines parties de notre site Web, vous êtes responsable de la sécurité. Vous ne devez pas le partager avec des tiers en particulier des commentaires, des questions, car ces zones peuvent être consultées par n’importe quel utilisateur authentifié sur le sites Web.</p>
+<p>Pour des raisons évidentes, nous ne sommes pas en mesure de contrôler les actions des utilisateurs sur nos sites Web. C’est pourquoi vous devez partager judicieusement vos informations dans les zones publiques de nos sites Web, car nous ne pouvons pas garantir que vos informations ne seront pas consultées par des tiers non autorisés.</p>
+<p>Lorsque vous choisissez de partager vos informations via le site Web tierce, vous devez vérifier la politique de confidentialité de ce site pour être au courant de leurs pratiques de gestion / protection de l’information.</p>
+<h5><a name="9"></a>Comment pouvez-vous accéder et gérer vos informations personnelles ?</h5>
+<p>Toutes les informations personnelles que nous collectons à votre sujet sont disponibles dans votre compte. Vous avez le droit de faire toutes les modifications et corrections nécessaires des erreurs disponibles dans ces données.</p>
+<p>Vous pouvez recevoir vos informations personnelles dans un format structuré et lisible par machine, les effacer ou restreindre leur traitement. Vous pouvez également vous opposer au traitement de vos données personnelles en fonction de vos intérêts légitimes, tels que le profilage pour le marketing direct et les cas où nous avons demandé votre consentement pour traiter vos données.</p>
+<p>S’il arrive que vous ayez des problèmes non résolus, vous avez droit de vous plaindre auprès des autorités de protection des données. Si vous croyez que vos droits à la vie privée ont été violés, veuillez nous contacter à <a href="mailto:juridique@kenny-alonzo.ch">juridique@kenny-alonzo.ch</a></p>
+<h5><a name="10"></a>Choix de marketing concernant vos informations personnelles</h5>
+<p>Dans le cas où nous aurions votre consentement, nous vous enverrons des documents de marketing qui comprendront des informations sur les produits, les services, les réductions que nous pensons être intéressantes pour vous. Si vous décidez de ne pas recevoir cette notification par e-mail, vous pouvez facilement vous désabonner en utilisant l’option de désabonnement ou nous contactant via <a href="mailto:unsubscribe@kenny-alonzo.ch">unsubscribe@kenny-alonzo.ch</a><br>
+<strong>Cookies</strong><br>
+kenny-alonzo.ch utilisent des cookies pour analyser le comportement des utilisateurs, recueillir des informations démographiques sur notre base d’utilisateurs en général. Un cookie est un petit fichier placé sur votre appareil lorsque vous visitez un site Web. En utilisant les paramètres du navigateur de votre appareil, vous pouvez utiliser des cookies, au cas où vous les désactivez vous limiterez certaines fonctionnalités sur nos sites Web.</p>
+<p>Nous utilisons des cookies fonctionnels et analytiques, pour plus d’informations sur l’utilisation des cookies, veuillez consulter notre <a href="https://www.kenny-alonzo.ch/fr/cookie-policy/">politique de cookies</a>, ou visiter <a href="http://www.allaboutcookies.org/">www.allaboutcookies.org</a></p>
+<p><strong>Balises Web</strong><br>
+Une autre technologie que nous utilisons sont les balises Web (Web Beacons). Il est nécessaire de suivre votre utilisation de notre site Web, dans des occasions telles que des promotions ou l’utilisation d’un bulletin d’information. Les données que nous collectons via les balises Web nous permettent de suivre le nombre d’utilisateurs qui ont ouvert nos newsletters. En outre, les balises Web nous aident à comprendre le comportement de nos utilisateurs, membres et visiteurs.</p>
+<p><strong>Google Analytics</strong><br>
+Les sites Web kenny-alonzo utilisent Google Analytics, un service d’analyse Web conçu par Google, Inc. («Google»). Le logiciel Google Analytics utilise des cookies pour analyser le comportement des utilisateurs. Toutes les données (c’est-à-dire votre activité dans les sites Web kenny-alonzo) sont collectées par des cookies et stockées sur des serveurs Google aux États-Unis.</p>
+<p>Google à son tour utilise ces données pour évaluer le comportement des utilisateurs en général, compiler des rapports pour les gestionnaires de sites ainsi que fournir des données à des services liés à l’activité du site et l’utilisation d’Internet. Google peut transférer diverses données à des tiers lorsque la loi l’exige, ou lorsque ces tiers traitent ces informations pour le compte de Google.</p>
+<p>En aucun cas, Google n’associe votre adresse IP à d’autres données détenues par Google. Dans le cas où vous ne souhaitez pas fournir à Google les données de navigation, vous pouvez bloquer l’utilisation des cookies via les paramètres de votre navigateur. Plus d’informations sur <a href="https://tools.google.com/dlpage/gaoptout?hl=en">Google analytics opt-out</a>, <a href="https://www.google.com/intl/en/policies/privacy/">www.google.com/intl/en/policies/privacy/</a>, et <a href="http://www.google.com/analytics/terms/us.html"> www.google.com/analytics/terms/us.html</a>.</p>
+<p>Google Analytics est expliqué sous le lien suivant <a href="https://www.google.com/analytics/">www.google.com/analytics/</a> .</p>
+<h5><a name="11"></a> Information publique et sites Web tiers</h5>
+<p><strong>Témoignages</strong><br>
+En plus de diverses recommandations, nous affichons des témoignages sur notre site Web. Ceux-ci sont publiés seulement après avoir reçu votre consentement, nous publions vos témoignages en précisant votre nom. Si vous souhaitez supprimer ou modifier vos témoignages existants, n’hésitez pas à nous contacter par e-mail <a href="mailto:info@kenny-alonzo.ch">info@kenny-alonzo.ch</a></p>
+<p><strong>Blog</strong><br>
+kenny-alonzo.ch offre aux utilisateurs la possibilité de laisser des commentaires individuels sur des contributions de blog individuelles sur le blog, qui se trouve sur le site Web du contrôleur. Les informations que vous publiez sur vos commentaires ou publications peuvent être lues, collectées ou utilisées par tout visiteur ou utilisateur de nos sites Web. Dans le cas où vous souhaitez supprimer certaines de vos informations sur nos blogs contactez-nous par e-mail <a href="mailto:marketing@kenny-alonzo.ch">marketing@kenny-alonzo.ch</a>. Si nous sommes incapables de supprimer vos informations, nous vous dirons pourquoi.<br>
+<strong>Plateformes de médias sociaux et widgets</strong><br>
+Tous les sites Web de kenny-alonzo sont dotés de fonctionnalités de médias sociaux intégrées, par exemple un bouton Facebook. Ces fonctionnalités peuvent collecter vos données comme une adresse IP ou placer un cookie dans votre navigateur afin de collecter des informations statistiques sur vos interactions avec nos sites Web. Les fonctionnalités de médias sociaux sont hébergées sur notre site Web et sur les serveurs d’un réseau de médias sociaux spécifique.</p>
+<p>Outre ces fonctionnalités, nous maintenons des profils sur les principaux réseaux, y compris Facebook, Twitter, Instagram et Google+. Veuillez noter que toutes les informations que vous soumettez sur ces réseaux dans des zones publiques telles que les commentaires peuvent être facilement lues, collectées ou stockées par tous les utilisateurs de ces réseaux. Nous ne sommes pas en mesure de contrôler les actions des autres utilisateurs de ces plates-formes ou les actions de ces plateformes. Votre activité avec ces fonctionnalités et / ou plates-formes est régie par les politiques de confidentialité des entreprises qui les fournissent.<br>
+<strong>Liens vers d’autres sites</strong><br>
+Si vous cliquez sur un lien vers un site tiers, vous quitterez notre site et vous accéderez au site que vous avez sélectionné. Puisque nous ne pouvons pas contrôler les activités de tiers, nous n’acceptons aucune responsabilité pour l’utilisation de vos informations personnelles par ces parties. Veuillez consulter la politique de confidentialité de tout autre fournisseur de services auprès duquel vous demandez des services.</p>
+<h5><a name="12"></a> Effacement systématique et blocage des données personnelles</h5>
+<p>Le responsable de l’information traite et stocke les données non publiques de l’intéressé seulement pour le montant nécessaire à la réalisation de l’objectif de stockage, ou tel que cela est souvent accordé par les législateurs européens dans des lois ou des règles auxquelles le contrôleur est soumis.</p>
+<p>Si l’objectif de stockage n’est pas applicable, ou si une période de stockage prescrite par le législateur européen ou une autre instance compétente expire, les informations non publiques seront bloquées ou effacées.</p>
+<h5><a name="13"></a> Confidentialité des enfants</h5>
+<p>Tous les sites Web de kenny-alonzo, y compris les blogs et les services, ne sont pas destinés à être utilisés par des enfants de moins de 13 ans. Personne de moins de 13 ans ne peut fournir des informations personnelles sur nos sites Web. Nous ne collectons pas les informations auprès d’enfants de moins de 13 ans. Si vous avez moins de 13 ans, vous n’êtes pas autorisé à utiliser nos sites Web, à acheter des produits sur notre marketplace, à commenter des articles de blog, à publier sur les réseaux sociaux ou à fournir des informations personnelles. Si nous apprenons que vous avez violé ce terme, votre compte, ainsi que toutes les informations, seront supprimés. Dans le cas où vous pensez que nous pouvons avoir des informations fournies par votre enfant s’il vous plaît contactez-nous par e-mail <a href="mailto:juridique@kenny-alonzo.ch">privacy@kenny-alonzo.ch</a>.</p>
+<h5><a name="14"></a> Changements dans notre Politique de confidentialité</h5>
+<p>En tant que responsable du traitement des données, nous nous réservons le droit de modifier ou de changer cette politique de confidentialité à tout moment. Dans le cas où des modifications seront appliquées, nous les publierons dans la section Politique de confidentialité, vous serez informé par courrier électronique que certaines modifications de notre Politique ont été appliquées.</p>
+<h5><a name="15"></a> Informations de contact</h5>
+<p>Selon le contexte des informations personnelles que vous fournissez, kenny-alonzo.ch est à la fois le responsable du traitement de données et le processeur de données de vos informations personnelles en vertu de cette politique. kenny-alonzo.ch est un processeur d’informations personnelles soumises aux services ou collectées par le biais des services au nom ou à la demande des abonnés.</p>
+<p>Si vous avez des questions concernant cette Politique de confidentialité, y compris le traitement de vos informations personnelles, ou si vous croyez que vos droits à la vie privée ont été violés, veuillez nous contacter à <a href="mailto:juridique@kenny-alonzo.ch">privacy@kenny-alonzo.ch</a>. Nous répondrons à toutes les demandes, demandes de renseignements ou préoccupations dans les quinze (15) jours.</p>
+<h5>Contrôle version anglaise</h5>
+<h5>La base juridique du traitement</h5>
+<h5><a name="16"></a> Informations légal</h5>
+<p>www.kenny-alonzo.ch, tous droits réservés, représente la propriété intellectuelle de Monsieur Kenny Alonzo né le 02.05.1987 domicilié à Lausanne en Suisse. De ce fait elle n’a pas pour but de vendre des produits ou services ni de les plébiscités.</p>
+<p>Les travaux affichés sur le site sont tous l’ouvre des travaux réalisés dans un cadre académique, non lucratif ou en vu de réinsérer le détenteur de la propriété intellectuelle dans marché du travail.</p>
+<p>Les travaux réalisés sous contrat sont affichés avec l’accord du titulaire du copyright ou de ces représentants et sous leur propre copyright.</p>
+<p>Sous réserve d’une demande de retrait des travaux réalisés par des tiers. Il se peut que le délai de traitement concernant une demande d’autorisation ou de retrait puisse varier avant la modification sur le site.</p>
+<p>Si vous désirer formuler une requête de retrait, veuillez en déposer la demande à juridique@kenny-alonzo.ch en précisant la nature de la demande, le nom du projet à retirer ainsi que le tord ou préjudice engendré par la publication et la preuve que vous êtes le détenteur ou représentant ou partie participative du projet.</p>
+<p>En vue de ce qui suit, ni www.kenny-alonzo.ch ni sont propriétaire ne peuvent être poursuivi en justice par des voies de plagia ou de vol d’information.
+</p>
+</p></div><!-- .default_set_content (end)
+        -->
+</div><!--
+        .default-set-container (end) --></div></div>
+  
+        </div>
+
+        <!-- Blog Post
+        <div class="card mb-4">
+          <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+          <div class="card-body">
+            <h2 class="card-title">Post Title</h2>
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+            <a href="#" class="btn btn-primary">Read More →</a>
+          </div>
+          <div class="card-footer text-muted">
+            Posted on January 1, 2017 by
+            <a href="#">Start Bootstrap</a>
+          </div>
+        </div>
+       
+
+        <ul class="pagination justify-content-center mb-4">
+          <li class="page-item">
+            <a class="page-link" href="#">← Older</a>
+          </li>
+          <li class="page-item disabled">
+            <a class="page-link" href="#">Newer →</a>
+          </li>
+        </ul>
+        -->
+      </div>
+    </div>
+    <!-- /.row -->
+
+  </div>
+
+        
+
+
+</main>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('build/homepage.js') }}"></script>
+{% endblock %}

@@ -291,7 +291,10 @@
 													</div>
 													<div id="twitter_update_list_master">
 														<div class="left" id="twitter_update_list">
-															<div class="left" id="twitter_update_list_container"></div>
+															{% for tweet in tweet_posts %}
+																<div class="left" id="twitter_update_list_container">{{ tweet.text|e }}</div>
+															{% endfor %}
+															
 														</div>
 													</div>
 													<div class="clear"></div>

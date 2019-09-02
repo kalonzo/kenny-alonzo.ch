@@ -1,0 +1,14 @@
+<?php
+namespace App\Utils;
+
+class ApiConst{
+
+    /* TWITTER API*/
+    const TWITTER_CONSUMER_KEY="lq6ow3KsZjtXclaT0PbSc3Ukm";
+    const TWITTER_CONSUMER_SECRET="1WcRxtTyZSmf8Nrlg0IoEjjQYmqCMJtoVPGeisfvFPEQKOFAGU";
+    const TWITTER_ACCESS_TOKEN_KEY="1045423261281112064-cBk4FgcJCRzReDO7KZIRO5EpJ1NDV7";
+    const TWITTER_ACCESS_TOKEN_SECRET="mQVLvGmM78qGS9UJw466zq3XDSfR3IeHwfukqRpZelUvV";
+}
+
+
+?>

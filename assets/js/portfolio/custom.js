@@ -140,7 +140,7 @@ $(document).ready(function(){
 	
 	/* Twitter */
 	
-	/* TWEET 1 
+	/* TWEET 1* 
 	$.getJSON('https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=NoStarSunshine1&count=5&include_rts=1&callback=?',{})
 	.done(function( json ) {
 		$.each(json,function(){
