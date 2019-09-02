@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Websites index{% endblock %}
+
+{% block body %}
+    <h1>Websites index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>IdWeb</th>
+                <th>Name</th>
+                <th>Slug</th>
+                <th>Descn</th>
+                <th>CreationDate</th>
+                <th>PublishedAt</th>
+                <th>Active</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for website in websites %}
+            <tr>
+                <td>{{ website.idWeb }}</td>
+                <td>{{ website.name }}</td>
+                <td>{{ website.slug }}</td>
+                <td>{{ website.descn }}</td>
+                <td>{{ website.creationDate ? website.creationDate|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ website.publishedAt ? website.publishedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ website.active ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('websites_show', {'idWeb': website.idWeb}) }}">show</a>
+                    <a href="{{ path('websites_edit', {'idWeb': website.idWeb}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('websites_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'BebasRegular';
+    src: url('/pbuild/static/portfolio/webfont/BEBAS___-webfont.eot');
+    src: url('/pbuild/static/portfolio/webfont/BEBAS___-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/pbuild/static/portfolio/webfont/BEBAS___-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}

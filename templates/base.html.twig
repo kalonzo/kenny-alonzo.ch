@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <title>{% block title %}Digital Portfolio{% endblock %}</title>
+        {% block stylesheets %} 
+        <link href="{{ asset('build/app.css') }}" rel="stylesheet" />
+        {% endblock %}
+    </head>
+    <body>
+        <!--Inclusion du header dans tout les template html.twig qui utilise ce template -->
+        {{ render(controller('App\\Controller\\LayoutController::headerAction'))  }} 
+        
+        <div class="main">
+        {% block body %}{% endblock %}
+        </div>
+        <!--Inclusion du footer dans tout les template html.twig qui utilise ce template -->
+        {{ render(controller('App\\Controller\\LayoutController::footerAction'))  }} 
+        
+
+        {% block javascripts %}
+         <script src="{{ asset('build/app.js') }}"></script>
+         <script src="{{ asset('build/runtime.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,187 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {{ controller_name }}!{% endblock %}
+
+{% block stylesheets %} 
+ {{ parent() }}
+<link href="{{ asset('build/homepage.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+
+<main role="main">
+
+      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+          <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+          <li data-target="#myCarousel" data-slide-to="3" class=""></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="first-slide" src="{{asset('build/static/slider/slider-1.jpg')}}" alt="First slide">
+            <div class="container">
+              <div class="carousel-caption text-left">
+                <h1>Example headline.</h1>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="second-slide" src="{{asset('build/static/slider/slider-2.png')}}" alt="Second slide">
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Another example headline.</h1>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img class="third-slide" src="{{asset('build/static/slider/slider-3.jpg')}}" alt="Third slide">
+            <div class="container">
+              <div class="carousel-caption text-right">
+                <h1>One more for good measure.</h1>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+              </div>
+            </div>
+          </div>
+        <div class="carousel-item">
+            <img class="four-slide" src="{{asset('build/static/slider/slider-4.jpg')}}" alt="Four slide">
+            <div class="container">
+              <div class="carousel-caption text-right">
+                <h1>One more for good measure.</h1>
+                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+
+      <!-- Marketing messaging and featurettes
+      ================================================== -->
+      <!-- Wrap the rest of the page in another container to center all the content. -->
+
+      <div class="container marketing">
+
+        <!-- Three columns of text below the carousel -->
+        <div class="row">
+          <div class="col-lg-4">
+            <img class="rounded-circle" src="{{asset('build/static/services/service-1.jpg')}}" alt="Web Developer" width="140" height="140">
+            <h2>Web Developer</h2>
+            <p class="services_text">Multi-platform, professional website design and customization is at the heart of any successful marketing or personal development. New web technologies constantly evolving, good practices for developing its marketing image and the best way to stay up to date and seen by the market.</p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <img class="rounded-circle" src="{{asset('build/static/services/service-2.jpg')}}" alt="Digital Marketing" width="140" height="140">
+            <h2>Digital Marketing</h2>
+            <p class="services_text">Or am I why no one sees me, I am tall, I am beautiful! A website is not the only ingredient necessary to distinguish yourself from others, nowadays there are many competitors, hence the importance of offering your customers pleasant and innovative services. To boost your online visibility and acclaimed new customer digital marketing and an important part of the acquisition of new customer.</p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+          </div><!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <img class="rounded-circle" src="{{asset('build/static/services/service-3.jpg')}}" alt="Consulting" width="140" height="140">
+            <h2>Consulting</h2>
+            <p class="services_text">IT consulting is an important part of setting up computer systems. According to a 2013 study, companies spend an annual budget of 1 to 9% of their turnover according to the sectors of activity. The consulting aims to understand the needs of these expenses and to limit the impacts related to a mismanagement of the projects.</p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details »</a></p>
+          </div><!-- /.col-lg-4 -->
+        </div><!-- /.row -->
+
+        <!-- START THE FEATURETTES -->
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">Website development. <span class="text-muted">Your internet image, your design.</span></h2>
+            <p class="lead">Website design in a broad sense, realization of your web project and professional advice, designing a website is not simply to create a static business card.Today the technological requirements and the wait for sober and efficient service. is an important part of your business.
+e-commerce to sell your articles or offer your services on the web (shop on line)
+Customized solution offering services out of web standards (dynamic website, corporate intranet)
+CMS website design on the go to promote an event or portfolio (static website with content management)</p>
+          </div>
+          <div class="col-md-5">
+            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" style="width: 500px; height: 500px;" src="{{asset('build/static/services/panel-1.png')}}" data-holder-rendered="true">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading">Digital Marketing. <span class="text-muted">SEO.</span></h2>
+            <p class="lead">Digital marketing is about boosting your visibility to your customers and soliciting your new customers by precisely targeting their location. An example of successful digital marketing and that of mobile applications like candy crush or clash of clan which are popular applications on a large platform and search engine
+The main areas and techniques of digital marketing are:
+Email marketing
+Display advertising
+Search engine marketing (natural referencing + commercial links)
+Web analytics
+membership
+Conversion and attribution issues
+The marketing content
+Social and viral marketing
+Mobile marketing</p>
+          </div>
+          <div class="col-md-5 order-md-1">
+            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" src="{{asset('build/static/services/panel-2.jpg')}}" data-holder-rendered="true" style="width: 500px; height: 500px;">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+          <div class="col-md-7">
+            <h2 class="featurette-heading">Consulting. <span class="text-muted">Checkmate.</span></h2>
+            <p class="lead">The consulting for a company, it is to seek external expertise adviser, experienced professional, to allow the improvement of a company.
+
+Prior analysis
+That which accompanies change
+Reporting to report the results of the consulting mission
+Consulting: a wide variety of fields
+Insofar as consulting is aimed at improving performance, consulting assignments can cover a wide variety of fields and consultants are usually specialized in a particular field of expertise:
+
+Financial audit
+Inventory management
+Information system
+Assistance for project management
+Process audit
+In short, for every problem encountered by a contractor, there is at least one solution!</p>
+          </div>
+          <div class="col-md-5">
+            <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" src="{{asset('build/static/services/panel-3.png')}}" data-holder-rendered="true" style="width: 500px; height: 500px;">
+          </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- /END THE FEATURETTES -->
+
+      </div><!-- /.container -->
+
+      <!-- FOOTER 
+      <footer class="container">
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p>© 2017-2018 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+      </footer>-->
+    </main>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('build/homepage.js') }}"></script>
+{% endblock %}
