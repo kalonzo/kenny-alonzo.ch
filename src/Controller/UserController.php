@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Controller;
-
 //use for special request needing for user 
 use App\Repository\UserRepository;
 //use statement for form
@@ -37,10 +35,7 @@ use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
 //import personal class tools for business need
 use App\Utils\Tools;
 use Symfony\Component\PropertyInfo\Type;
-
 //para, convertot
-
-
 /**
  * @Route("/user")
  */
@@ -53,7 +48,6 @@ class UserController extends AbstractController
     {
         return $this->render('user/index.html.twig', ['users' => $userRepository->findAll()]);
     }
-
     /**
      * @Route("/new", name="user_new", methods="GET|POST")
      */
@@ -62,15 +56,12 @@ class UserController extends AbstractController
         // 1) build the form
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
-
         // 2) handle the submit (will only happen on POST)
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-
             // 3) Encode the password (you could also do this via Doctrine listener)
             $password = $passwordEncoder->encodePassword($user, $user->getPassword());
             $user->setPassword($password);
-
             // 4) save the User!
             $date = new \DateTime('@'.strtotime('now'));//insert current timestamp
             $user->setCreationDate($date);//assign date to current gallery object
@@ -81,7 +72,6 @@ class UserController extends AbstractController
             $emUser = $this->getDoctrine()->getManager();
             $emUser->persist($user);
             $emUser->flush($user);
-
             // ... do any other work - like sending them an email, etc
             // maybe set a "flash" success message for the user
             $subject = 'Registration suceful';
@@ -91,21 +81,17 @@ class UserController extends AbstractController
             $varTemplate = array (
                 'name' => 'Kalonzo@bluewin.ch',
             );
-
             $email = new EmailsController;
             //$email->sendMail($subject, $sender, $reciver, $templateMail , $mailer, $varTemplate);
-
             
             //die('Die in pieace');
             return $this->render('user/show.html.twig', ['user' => $user]);
         }
-
         return $this->render(
             'user/new.html.twig',
             array('form' => $form->createView())
         );
     }
-
     /**
      * @Route("/{id}", name="user_show", methods="GET")
      */
@@ -113,7 +99,6 @@ class UserController extends AbstractController
     {//Todo param convert
         return $this->render('user/show.html.twig', ['user' => $user]);
     }
-
     /**
      * @Route("/{id}/edit", name="user_edit", methods="GET|POST")
      */
@@ -121,21 +106,17 @@ class UserController extends AbstractController
     {
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
             $password = $passwordEncoder->encodePassword($user, $user->getPassword()); // +permet d'encoder le mot de passe envoyer en post
             $user->setPassword($password); // + stock la nouvelle valeur pour le mot de passe
             $this->getDoctrine()->getManager()->flush();
-
             return $this->redirectToRoute('user_edit', ['id' => $user->getId()]);
         }
-
         return $this->render('user/edit.html.twig', [
             'user' => $user,
             'form' => $form->createView(),
         ]);
     }
-
     /**
      * @Route("/{id}", name="user_delete", methods="DELETE")
      */
@@ -146,7 +127,6 @@ class UserController extends AbstractController
             $em->remove($user);
             $em->flush();
         }
-
         return $this->redirectToRoute('user_index');
     }
 }
