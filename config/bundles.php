@@ -11,5 +11,4 @@ return [
     Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle::class => ['all' => true],
     Symfony\Bundle\TwigBundle\TwigBundle::class => ['all' => true],
     Symfony\Bundle\WebProfilerBundle\WebProfilerBundle::class => ['dev' => true, 'test' => true],
-    Csa\Bundle\GuzzleBundle\CsaGuzzleBundle::class => ['dev' => true, 'test' => true],
 ];
