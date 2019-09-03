@@ -26,13 +26,10 @@ class LayoutController extends AbstractController
     { 
         $user = $this->getUser();
         if($user){
-            $userId = $user->getId();
-
             $portfolio = $this->getDoctrine()
             ->getRepository(Portfolios::class)
-            ->find($userId);
+            ->find($user);
 
-            //Todo $project dois renvoyer une collection de projet ou un resultat personaliser
             if($portfolio){
                 //
                 $em = $this->getDoctrine()->getManager();
@@ -57,7 +54,7 @@ class LayoutController extends AbstractController
                 }
             }else{
                 //proced Portfolio creation
-                echo("LayoutController 52 no portfolio for user ");
+                //echo("LayoutController 52 no portfolio for user ");
                 return $this->render('layout/header.html.twig', [
                     'user' => $user,
                     'portfolio' => 'portfolio',

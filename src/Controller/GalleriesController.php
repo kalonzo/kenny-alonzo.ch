@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Galleries;
+use App\Entity\Types;
 use App\Form\GalleriesType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -44,8 +45,21 @@ class GalleriesController extends AbstractController
              // $file stores the uploaded PDF file
             /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
             $file = $gallery->getFilename();
+            $pictureType = $this->getDoctrine()->getRepository(Types::class)->find(Types::USER_PICTURE);;
 
-            $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
+            $gallery->setIdGallery(1);
+            $gallery->setIdType($pictureType);
+
+            $fileName = Tools::generateUniqueFileName().'.'.$file->guessExtension();
+        
+            $gallery->setUniquefilename($fileName);
+            $date = new \DateTime('@'.strtotime('now'));//insert current timestamp
+            $gallery->setCreationDate($date);//assign date to current gallery object
+            
+            $em->persist($gallery);
+            $em->flush();
+
+            $fileName = Tools::generateUniqueFileName().'.'.$file->guessExtension();
 
             // Move the file to the directory where brochures are stored
             try {
@@ -59,10 +73,12 @@ class GalleriesController extends AbstractController
 
             // updates the 'brochure' property to store the PDF file name
             // instead of its contents
-            $gallery->setUniquefilename(getTimeZone());
+            $gallery->setIdGallery(1);
+            
+            $gallery->setIdType($pictureType);
+            $gallery->setUniquefilename($fileName);
             $date = new \DateTime('@'.strtotime('now'));//insert current timestamp
             $gallery->setCreationDate($date);//assign date to current gallery object
-
             $em->persist($gallery);
             $em->flush();
 

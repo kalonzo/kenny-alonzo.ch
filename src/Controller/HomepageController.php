@@ -14,8 +14,11 @@ class HomepageController extends AbstractController
      */
     public function index(\Swift_Mailer $mailer)
     {
+        //$user = $this.user;
+        $user = $this->getUser();
         return $this->render('homepage/index.html.twig', [
             'controller_name' => 'HomepageController',
+            'user' => $user,
         ]);
     }
 
@@ -60,7 +63,7 @@ class HomepageController extends AbstractController
     }
 
     /**
-     * @Route("/{id}/portfolio", name="my_portfolio", methods="GET")
+     * @Route("/user/{id}/portfolio", name="my_portfolio", methods="GET")
      */
     public function portfolio()
     {

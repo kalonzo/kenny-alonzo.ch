@@ -20,23 +20,40 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{{ path('homepage') }}">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ path('website') }}">My Websites</a>
-        </li>        
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Portfolio
-            </a>
+        </li>  
+    <!-- start menu portfolio -->
+        {% if user.id is defined %}
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="/user/{{user.id}}/portfolio" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Portfolio
+                </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">CV</a>
-            <a class="dropdown-item" href="#">My projects</a>
+            <!-- start objet portfolio -->
+                <a class="dropdown-item" href="/user/{{user.id}}/portfolio#id_resume">CV</a>
+                <a class="dropdown-item" href="/user/{{user.id}}/portfolio#id_portfolio">Mes projets</a>
+                <a class="dropdown-item" href="/user/{{user.id}}/portfolio#id_about">A propos</a>
+            <!-- end objet portfolio -->
             <!-- <div class="dropdown-divider"></div> -->
             </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link disabled" href="#">Admin</a>
+            </li>
+        {% endif %}
+
+            {% if user.email is defined %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/user/{{user.id}}/portfolio" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ user.email }}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/user/{{user.id}}/">Afficher le profil</a>
+                        <a class="dropdown-item" href="/user/{{user.id}}/edit">Modifier les informations</a>
+                        <!-- <div class="dropdown-divider"></div> -->
+                    </div>
+                </li>
+            {% endif %}
         </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">

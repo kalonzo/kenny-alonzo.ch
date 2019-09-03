@@ -19,9 +19,10 @@ class Galleries
     /**
      * @var int
      *
-     * @ORM\Column(name="id_gallery", type="uuid", nullable=false)
+     * @ORM\Column(name="id_gallery", type="id", nullable=false)
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     * 
      */
     private $idGallery;
 
