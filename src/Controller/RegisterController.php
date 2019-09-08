@@ -34,6 +34,7 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;//need 
 use App\Controller\EmailsController;
 //import personal class tools for business need
 use App\Utils\Tools;
+use Symfony\Component\Form\FormInterface;
 
 /**
  * @Route("/register")
@@ -52,11 +53,11 @@ class RegisterController extends AbstractController
         return $this->render('register/index.html.twig', ['portfolios' => $portfolios]);
     }
 
-    public function userPostAction(Request $request, UserPasswordEncoderInterface $passwordEncoder)
+    public function userPostAction(Request $request,FormInterface $form, UserPasswordEncoderInterface $passwordEncoder)
     {
         // 1) build the form for all form you want handle 
         $user = new User();
-        $form = $this->createForm(UserType::class, $user);
+       
         // 2) handle the submiteds (input your logic form traitment)
         $form->handleRequest($request);
             if ($form->isSubmitted() && $form->isValid()) {
@@ -74,7 +75,8 @@ class RegisterController extends AbstractController
                 //var_dump($userId);
                 $emUser = $this->getDoctrine()->getManager();
                 $emUser->persist($user);
-                //$emUser->flush($user);
+                $emUser->flush($user);
+                die();
                 return $user;
       }
       return $form;
@@ -176,28 +178,16 @@ class RegisterController extends AbstractController
      */
     public function new(Request $request, UserPasswordEncoderInterface $passwordEncoder, \Swift_Mailer $mailer)
     {
-        //create a user for our application is a litle bit more complexe to store to oune entities
-        $formState = 0; // state form for controle for send to user 
-        $forms = array();
-        $response = new Response();
-        $form = self::userPostAction( $request,  $passwordEncoder);
-        $formGal = self::galleriyPostAction( $request);
-        $formCv = self::cvPostAction( $request);
-        $formPort = self::portfolioPostAction( $request);
+        $portfolio = new Portfolios();
+        $form = $this->createForm(RegisterType::class, $portfolio);
 
-        
-        $cvOrder = Tools::genereteUUID(); // order for cv => user can have many cv in her portfolio 
-        $potId = Tools::genereteUUID(); // order for cv => user can have many cv in her portfolio 
-        //Cv contain many depedance for commandite we defaulted the value
-        //Todo Fill in function of work of candiate
+            
+
+        $response = new Response();
 
         return $this->render(
             'register/new.html.twig',
             array(  'form' => $form->createView()
-                    ,'formGal' => $formGal->createView()
-                    ,'formPort' => $formPort->createView()
-                    ,'formCv' => $formCv->createView()
-                    ,'response' => $response
             )
         );
     }

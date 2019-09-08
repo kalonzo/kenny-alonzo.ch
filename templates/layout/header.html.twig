@@ -10,6 +10,11 @@
             <a class="active" href="{{ path('homepage') }}">Home</a>
             <a href="{{ path('contact') }}">Contact</a>
             <a href="{{ path('about') }}">About</a>
+            {% if user.id is defined %}
+                <a href="/user/{{user.id}}/portfolio">Mon epace privé</a>
+            {% else %}
+                <a href="{{ path('app_login') }}">Mon epace privé</a>
+            {% endif %}
         </div>
 </div>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -50,6 +55,7 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/user/{{user.id}}/">Afficher le profil</a>
                         <a class="dropdown-item" href="/user/{{user.id}}/edit">Modifier les informations</a>
+                        <a class="dropdown-item" href="/logout">Déconnexion</a>
                         <!-- <div class="dropdown-divider"></div> -->
                     </div>
                 </li>

@@ -6,6 +6,7 @@ use App\Entity\Cv;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
 class CvType extends AbstractType
 {
@@ -22,15 +23,15 @@ class CvType extends AbstractType
             ->add('mail')
             ->add('phoneNumber')
             ->add('anniversary')
-            ->add('creationDate')
+            //->add('creationDate') automated
             ->add('presentation')
             //->add('publishedAt') automated
-            ->add('active')
+            //->add('active')
             //->add('idOrder')
             ->add('idWorkingLicense')
             ->add('idDepartment')
             ->add('idTypeCv')
-            //->add('idCountry')
+            ->add('idCountry')
             //->add('idDriverSLicense')
             //->add('idExperience')
             //->add('idHobbie')
@@ -38,6 +39,8 @@ class CvType extends AbstractType
             //->add('idTraining')
             //->add('idPortfolio')
         ;
+        //Embed experiences Form
+       // $builder->add('experiences', ExperiencesType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver)

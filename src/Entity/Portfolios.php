@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Portfolios
@@ -14,6 +15,69 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Portfolios
 {
+
+    //user embed form for id
+
+    /**
+     * @Assert\Type(type="App\Entity\User")
+     * @Assert\Valid
+     */
+    protected $user;
+
+
+    public function getUser()
+    {
+        return $this->user;
+    }
+
+    public function setUser(User $user = null)
+    {
+        $this->user = $user;
+    }
+
+    // end user embed form for id
+
+    //cv embed form for idCv
+
+    /**
+     * @Assert\Type(type="App\Entity\User")
+     * @Assert\Valid
+     */
+    protected $cvs;
+
+
+    public function getCvs()
+    {
+        return $this->cvs;
+    }
+
+    public function setCvs(Cv $cvs = null)
+    {
+        $this->cvs = $cvs;
+    }
+
+    // end cv embed form for idCv
+    //cv embed form for idCv
+
+    /**
+     * @Assert\Type(type="App\Entity\User")
+     * @Assert\Valid
+     */
+    protected $gallery;
+
+
+    public function getGallery()
+    {
+        return $this->gallery;
+    }
+
+    public function setGallery(Galleries $gallery = null)
+    {
+        $this->cvs = $gallery;
+    }
+
+    // end cv embed form for idCv
+
     /**
      * @var int
      *

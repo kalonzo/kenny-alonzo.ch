@@ -4,9 +4,6 @@ namespace App\Form;
 
 use App\Entity\Portfolios;
 
-use App\Form\UserType;
-use App\Form\CvType;
-
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -17,15 +14,13 @@ class RegisterType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('id')
             //->add('idApp')
-            ->add('idCv')
             ->add('name')
-            ->add('slug')
+            //->add('slug')automated
             ->add('descn')
-            ->add('creationDate')
-            ->add('publishedAt')
-            ->add('active')
+            //->add('creationDate')
+            //->add('publishedAt')
+            //->add('active')automated
             //->add('idHeader')
            // ->add('idNavbar')
            // ->add('idMenuContent')
@@ -33,9 +28,13 @@ class RegisterType extends AbstractType
             //->add('idContent')
             //->add('idFooter')
             //->add('idGallery')
-            ->add('idProject')
+            //->add('idProject')
             //->add('idWeb')
         ;
+        //Embed  Form
+        $builder->add('user', UserType::class);
+        $builder->add('cvs', CvType::class);
+        $builder->add('gallery', GalleriesType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver)

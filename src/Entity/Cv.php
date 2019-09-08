@@ -5,6 +5,7 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Cv
@@ -14,6 +15,28 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Cv
 {
+
+    //experiences embed form for idExperience
+
+    /**
+     * @Assert\Type(type="App\Entity\Experiences")
+     * @Assert\Valid
+     */
+    protected $experiences;
+
+
+    public function getExperiences()
+    {
+        return $this->experiences;
+    }
+
+    public function setExperiences(Experiences $experiences = null)
+    {
+        $this->experiences = $experiences;
+    }
+
+    // end experiences embed form for idExperience
+
     /**
      * @var int
      *

@@ -18,8 +18,8 @@ class GalleriesType extends AbstractType
             //->add('image')
             //->add('duration')
             //->add('creationDate')
-            ->add('idType')
-            //->add('idPortfolio')
+            //->add('idType')automated
+            //->add('idPortfolio')automated
         ;
     }
 

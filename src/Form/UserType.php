@@ -9,23 +9,18 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 peuvent être déplacer dans Form\Type en fonction des besoins business*/
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-use Symfony\Component\Form\Extension\Core\Type\FileType;
-use Symfony\Component\Form\Extension\Core\Type\CollectionType;
-use App\Entity\Galleries;
 
 class UserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            //->add('filename', FileType::class, array('label' => 'filename (jpeg file)'))
             ->add('email')
             ->add('password', RepeatedType::class, array(
                 'type' => PasswordType::class,
                 'first_options'  => array('label' => 'Password'),
                 'second_options' => array('label' => 'Repeat Password'),
             ))
-            //->add('id', GalleriesType::class)
 
         ;
     }

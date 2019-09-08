@@ -87,7 +87,7 @@ class GalleriesController extends AbstractController
 
         return $this->render('galleries/new.html.twig', [
             'gallery' => $gallery,
-            'form' => $form->createView(),
+            'formGal' => $form->createView(),
         ]);
     }
 

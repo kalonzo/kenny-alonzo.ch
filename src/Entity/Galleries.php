@@ -19,7 +19,7 @@ class Galleries
     /**
      * @var int
      *
-     * @ORM\Column(name="id_gallery", type="id", nullable=false)
+     * @ORM\Column(name="id_gallery", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      * 
