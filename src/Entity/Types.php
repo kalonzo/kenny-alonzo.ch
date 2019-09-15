@@ -15,6 +15,8 @@ class Types
 
     const USER_PICTURE = 1;
 
+    const user_picture_directory = "user_picture_directory";
+
     /**
      * @var int
      *

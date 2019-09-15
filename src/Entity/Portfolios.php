@@ -22,7 +22,7 @@ class Portfolios
      * @Assert\Type(type="App\Entity\User")
      * @Assert\Valid
      */
-    protected $user;
+    public $user;
 
 
     public function getUser()
@@ -43,7 +43,7 @@ class Portfolios
      * @Assert\Type(type="App\Entity\User")
      * @Assert\Valid
      */
-    protected $cvs;
+    public $cvs;
 
 
     public function getCvs()
@@ -63,7 +63,7 @@ class Portfolios
      * @Assert\Type(type="App\Entity\User")
      * @Assert\Valid
      */
-    protected $gallery;
+    public $gallery;
 
 
     public function getGallery()
@@ -77,6 +77,28 @@ class Portfolios
     }
 
     // end cv embed form for idCv
+
+    //user embed form for id
+
+    /**
+     * @Assert\Type(type="App\Entity\User")
+     * @Assert\Valid
+     */
+
+    public $users;
+
+
+    public function getUsers()
+    {
+        return $this->users;
+    }
+
+    public function setUsers(User $users = null)
+    {
+        $this->users = $users;
+    }
+
+    // end users embed form for id
 
     /**
      * @var int

@@ -47,7 +47,6 @@ class GalleriesController extends AbstractController
             $file = $gallery->getFilename();
             $pictureType = $this->getDoctrine()->getRepository(Types::class)->find(Types::USER_PICTURE);;
 
-            $gallery->setIdGallery(1);
             $gallery->setIdType($pictureType);
 
             $fileName = Tools::generateUniqueFileName().'.'.$file->guessExtension();
@@ -59,8 +58,6 @@ class GalleriesController extends AbstractController
             $em->persist($gallery);
             $em->flush();
 
-            $fileName = Tools::generateUniqueFileName().'.'.$file->guessExtension();
-
             // Move the file to the directory where brochures are stored
             try {
                 $file->move(
@@ -70,10 +67,6 @@ class GalleriesController extends AbstractController
             } catch (FileException $e) {
                 // ... handle exception if something happens during file upload
             }
-
-            // updates the 'brochure' property to store the PDF file name
-            // instead of its contents
-            $gallery->setIdGallery(1);
             
             $gallery->setIdType($pictureType);
             $gallery->setUniquefilename($fileName);

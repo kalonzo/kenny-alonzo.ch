@@ -14,12 +14,6 @@ class GalleriesType extends AbstractType
     {
         $builder
             ->add('filename', FileType::class, array('label' => 'filename (jpeg file)'))
-            //->add('uniquefilename')
-            //->add('image')
-            //->add('duration')
-            //->add('creationDate')
-            //->add('idType')automated
-            //->add('idPortfolio')automated
         ;
     }
 

@@ -22,7 +22,7 @@ class Cv
      * @Assert\Type(type="App\Entity\Experiences")
      * @Assert\Valid
      */
-    protected $experiences;
+    public $experiences;
 
 
     public function getExperiences()

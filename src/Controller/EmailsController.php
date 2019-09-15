@@ -10,7 +10,7 @@ class EmailsController extends AbstractController {
     /**
      * @Route("/sendmail", name="sendmail", methods="GET")
      */
-    public function sendMail(\Swift_Mailer $mailer)
+    public function sendMail($subject, $sender, $reciver, $templateMail , $mailer, $varTemplate)
     {
         
         $subject = 'Registration suceful';

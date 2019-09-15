@@ -163,9 +163,6 @@ class Navbar
     }
 
 
-    public function __toString()
-    {
-        return $this->getName();
-    }
+
     
 }
