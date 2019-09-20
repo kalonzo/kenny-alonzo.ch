@@ -55,126 +55,6 @@ class RegisterController extends AbstractController
         return $this->render('register/index.html.twig', ['portfolios' => $portfolios]);
     }
 
-    public function userPostAction(Request $request,FormInterface $form, UserPasswordEncoderInterface $passwordEncoder)
-    {
-        // 1) build the form for all form you want handle 
-        $user = new User();
-       
-        // 2) handle the submiteds (input your logic form traitment)
-        $form->handleRequest($request);
-            if ($form->isSubmitted() && $form->isValid()) {
-                //Todo recuperate variable if form is not valid with alert message to prevent retype of information
-                // 3) Encode the password (you could also do this via Doctrine listener)
-                $password = $passwordEncoder->encodePassword($user, $user->getPassword());
-                $userId = Tools::genereteUUID();
-                $user->setPassword($password);
-                //4) Save current timestap for creation date
-                $date = new \DateTime('@'.strtotime('now'));//insert current timestamp
-                $user->setCreationDate($date);//assign date to current gallery object
-                $user->setLasLog($date);//assign date to current gallery object
-                $user->setId($userId);//assign date to current gallery object
-                // 5) save the User!
-                //var_dump($userId);
-                $emUser = $this->getDoctrine()->getManager();
-                $emUser->persist($user);
-                $emUser->flush($user);
-                die();
-                return $user;
-      }
-      return $form;
-    }
-
-    public function galleriyPostAction(Request $request)
-    {
-        //entity for strucure of site need to be defaulted for commodity 
-        //Portfolios dependence 
-        $pictureType = $this->getDoctrine()->getRepository(Types::class)->find(Types::USER_PICTURE);
-        $galleryId = Tools::genereteUUID();
-        $gallery = new Galleries();
-        $formGal = $this->createForm(GalleriesType::class, $gallery);
-        $formGal->handleRequest($request);
-
-            if ($formGal->isSubmitted() && $formGal->isValid()) {
-            
-                $emGal = $this->getDoctrine()->getManager();
-            
-                //Insert File
-                // $file stores the uploaded PDF file
-                /** @var Symfony\Component\HttpFoundation\File\UploadedFile $file */
-                $file = $gallery->getFilename();
-
-                $gallery->setIdGallery($galleryId);
-                $gallery->setIdType($pictureType);
-
-                $fileName = Tools::generateUniqueFileName().'.'.$file->guessExtension();
-            
-                $gallery->setUniquefilename($fileName);
-                $date = new \DateTime('@'.strtotime('now'));//insert current timestamp
-                $gallery->setCreationDate($date);//assign date to current gallery object
-                
-                $emGal->persist($gallery);
-                $emGal->flush();
-
-            }
-        
-            return $formGal;
-    }
-
-    public function cvPostAction(Request $request)
-    {
-        
-        $cv = new Cv();
-        $cvId = Tools::genereteUUID();
-        $formCv = $this->createForm(CvType::class, $cv);
-        $formCv->handleRequest($request);
-
-        if ($formCv->isSubmitted() && $formCv->isValid()) {
-
-            $emCv = $this->getDoctrine()->getManager();
-            $cv->setIdCv($cvId);
-            $emCv->persist($cv);
-
-        }
-        
-            return $formCv;
-    }
-
-    public function portfolioPostAction(Request $request){
-        $idContent = new Content();
-        $idFooter = new Footer();
-        $idHeader = new Header();
-        $idMenuContent = new MenuContent();
-        $idNavbar = new Navbar();
-
-        $project = new Projects();
-        $website = new Websites();
-        $portfolio = new Portfolios();
-        $formPort = $this->createForm(PortfoliosType::class, $portfolio);
-        $formPort->handleRequest($request);
-        
-            if ($formPort->isSubmitted() && $formPort->isValid()) {
-                $emPort = $this->getDoctrine()->getManager();
-                //$portfolio->setId($user);
-                $portfolio->setIdContent($idContent);
-                $portfolio->setIdFooter($idFooter);
-                $portfolio->setIdHeader($idHeader);
-                $portfolio->setIdMenuContent($idMenuContent);
-                $portfolio->setIdNavbar($idNavbar);
-
-                //insertion des liaison
-               // $portfolio->addIdCv($cv);
-               // $portfolio->addIdGallery($gallery);
-                $portfolio->addIdProject($project);
-                $portfolio->addIdWeb($website);
-                $emPort->persist($portfolio);
-                    
-                //$emUser->flush(); //comment flush if you need to debug a specific function without polluating DB
-
-                $emPort->flush();
-            }
-            return $formPort;
-    }
-
     /**
      * @Route("/new", name="register_new", methods="GET|POST")
      */
@@ -286,14 +166,10 @@ class RegisterController extends AbstractController
             $portfolio->addIdCv($cv);
             $portfolio->addIdGallery($gallery);
             $emPort->persist($portfolio);
-            //die("wait wait wait");
             $emPort->flush();
             
             $emUser = $this->getDoctrine()->getManager();
-            //var_dump($user);
-           // $emUser->persist($user);die();
-            //$emUser->flush($user);
-            // ... do any other work - like sending them an email, etc
+
             // maybe set a "flash" success message for the user
             $message = (new \Swift_Message('Hello Email'))
             ->setFrom('lab4tech-dev@lab4techdev')
@@ -305,15 +181,14 @@ class RegisterController extends AbstractController
                     ['name' => "info"]
                 ),
                 'text/html'
-            )
-    
-
-        ;
-    
-        $mailer->send($message);
-            
-           // die('Die in pieace');
-       
+            );
+             $mailer->send($message);
+             return $this->render('register/show.html.twig', [
+                 'user' => $user,
+                 'gallery' => $gallery,
+                 'cv' => $cv,
+                 'portfolios' => $portfolio
+             ]); 
         }
 
         return $this->render(
@@ -321,5 +196,19 @@ class RegisterController extends AbstractController
             array(  'form' => $form->createView()
             )
         );
+    }
+
+    /**
+     * @Route("/{id}", name="register_show", methods="GET")
+     */
+    public function show(Portfolios $portfolio): Response
+    {//Todo param convert
+        return $this->render('user/show.html.twig', [
+            'user' => $user,
+            'gallery' => $gallery,
+            'cv' => $cv,
+            'portfolios' => $portfolio
+        
+        ]);
     }
 }

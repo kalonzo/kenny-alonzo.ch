@@ -97,4 +97,8 @@ $(document).ready( function () {
     $('#table_id').DataTable();
 } );
 
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+
 console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
