@@ -73,7 +73,7 @@ class Portfolios
 
     public function setGallery(Galleries $gallery = null)
     {
-        $this->cvs = $gallery;
+        $this->gallery = $gallery;
     }
 
     // end cv embed form for idCv

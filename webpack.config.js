@@ -20,7 +20,7 @@ Encore
      */
     .addEntry('app', ['./assets/js/app.js','./assets/global.scss'])
     //.addEntry('date_picker', ['./assets/js/date_picker.js','./assets/sass/date_picker.scss'])
-    .addEntry('header', './assets/css/header/header.css')
+    .addEntry('header', ['./assets/css/header/header.css','./assets/js/header/header.js'])
     .addEntry('form-validation', './assets/js/form-validation.js')
     .addEntry('homepage', ['./assets/css/home/home.css','./assets/js/home/home.js'])
     /*Entry for portfolio plugin*/
